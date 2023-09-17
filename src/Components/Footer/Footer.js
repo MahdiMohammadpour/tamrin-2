@@ -23,7 +23,7 @@ import footer6 from "../../Resources/images/footer6.svg";
 
 const Footer = () => {
   return (
-    <div className="flex  flex-col fixed bottom-0 w-full h-[500px] border-t place-items-center">
+    <div className="flex  flex-col relative  w-full h-[500px] border-t place-items-center">
       <div className="flex justify-around w-[70%] mt-10 h-32 border-b justify-center">
         <Acheivment
           title="رتبه یک سفر"

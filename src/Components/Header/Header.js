@@ -7,8 +7,9 @@ const Header = () => {
   return (
     <div
       className={
-        "min-h-[64px] w-full flex fixed top-0 text-sm justify-center items-center shadow font-sans text-gray-500 font-medium text-[16px]"
+        "min-h-[64px] w-full flex text-sm justify-center items-center shadow font-sans text-gray-500 font-medium text-[16px] "
       }
+      
     >
       <div className="flex ml-[20%] px-[2%] cursor-pointer">
         <img src={logo} className="w-36" />

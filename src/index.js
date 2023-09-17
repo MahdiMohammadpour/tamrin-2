@@ -5,4 +5,4 @@ import './index.css'
 
 import "./Resources/Fonts/Iranian Sans.ttf"
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<React.StrictMode><App /></React.StrictMode>, document.getElementById("root"));
