@@ -29,7 +29,7 @@ const AddTaskForm = () => {
   return (
     <form
       onSubmit={submitHandler}
-      className="flex flex-col justify-between bg-gray-50 w-[20%] h-[400px] p-4 rounded shadow-md"
+      className="flex flex-col justify-between bg-gray-50 w-[25%] h-[400px] p-4 rounded shadow-md"
     >
       <div>
         <div className="flex justify-between items-center bg-amber-400 p-2 pr-4  rounded shadow-md">

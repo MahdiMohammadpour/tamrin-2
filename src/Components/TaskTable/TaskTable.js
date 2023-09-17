@@ -1,20 +1,26 @@
 import { useTasks } from "../Providers/TasksProvider";
 import Task from "../Task/Task";
 
+const statusList = ["انجام شده", "انجام نشده", "در حال انجام", "چالشی"];
+
 const TaskTable = () => {
   const tasks = useTasks();
-
-  console.log(tasks);
   return (
-    <div className="w-[70%] h-[400px]">
-      <div className="flex justify-between px-20 bg-amber-400  h-[52px] p-4 mr-4 rounded shadow-md text-center">
-        <p>نام تسک </p>
-        <p>نام کارشناس</p>
-        <p>وضعیت</p>
-      </div>
-      <div className="flex flex-col bg-gray-50  h-[333px] p-4 mr-4 mt-[15px] rounded shadow-md overflow-y-scroll">
-        {tasks.map(task => {return <Task task={task}/>})}
-      </div>
+    <div className="flex w-[70%] h-[400px] mr-5">
+      {statusList.map((status) => {
+        return (
+          <div className="flex flex-col w-[25%] h-[400px] mr-2">
+            <div className="flex items-center justify-center bg-amber-400 rounded shadow h-[50px] ">
+              {status}
+            </div>
+            <div className="flex flex-col items-center bg-gray-100 rounded shadow h-full mt-2 overflow-y-scroll px-2">
+              {tasks.map((task) => {
+                return task.status.label === status && <Task task={task} />;
+              })}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
