@@ -5,9 +5,9 @@ import Body from "./Components/Body/Body";
 const App = () => {
   return (
       <div className="flex flex-col justify-center min-h-screen">
-        <Header />
+        {/* <Header /> */}
         <Body />
-        <Footer />
+        {/* <Footer /> */}
       </div>
   );
 };
