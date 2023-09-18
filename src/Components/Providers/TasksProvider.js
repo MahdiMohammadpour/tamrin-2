@@ -7,7 +7,11 @@ const TasksContextDispatcher = React.createContext();
 
 const reducer = (state, action) => {
   if (action.type === "add") {
-    const newTask = {...action.task, id: Math.floor(Math.random() * 1000) + Date.now()}
+    const newTask = {
+      ...action.task,
+      id:
+        action.task.status.value + "-" + Math.floor(Math.random() * 1000) + Date.now(),
+    };
     const updatedTasks = [...state, newTask];
     return updatedTasks;
   }
