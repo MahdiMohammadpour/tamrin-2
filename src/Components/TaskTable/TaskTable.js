@@ -7,9 +7,9 @@ const TaskTable = () => {
   const tasks = useTasks();
   return (
     <div className="flex w-[70%] h-[400px] mr-5">
-      {statusList.map((status) => {
+      {statusList.map((status,index) => {
         return (
-          <div className="flex flex-col w-[25%] h-[400px] mr-2">
+          <div className="flex flex-col w-[25%] h-[400px] mr-2" key={index}>
             <div className="flex items-center justify-center bg-amber-400 rounded shadow h-[50px] ">
               {status}
             </div>

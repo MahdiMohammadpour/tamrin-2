@@ -13,6 +13,25 @@ const AddTaskForm = () => {
   const [task, setTask] = useState({ name: "", expert: "", status: "" });
   const dispatch = useTasksActions();
 
+  const selectStyles = {
+    control: (styles,{isFocused}) => ({ ...styles, backgroundColor: "white",border : isFocused && "none"}),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        backgroundColor: isSelected
+          ? "#fcd34d"
+          : isFocused
+          ? "#fde68a"
+          : "transparent",
+        cursor: isFocused && "pointer",
+        color: "black",
+        width : "96%",
+        margin : "2%",
+        borderRadius : "3px"
+      };
+    },
+  };
+
   const changeHandler = (e) => {
     setTask({ ...task, [e.target.name]: e.target.value });
   };
@@ -55,17 +74,18 @@ const AddTaskForm = () => {
         <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md mt-4">
           <label>وضعیت</label>
           <Select
-            title="s"
+            title="سلام"
             value={task.status}
             options={statusOptions}
             onChange={changeStatus}
-            className="shadow-md w-[65%] p-1 text-center rounded bg-transparent"
+            className="flex flex-col justify-center shadow-md w-[65%]  text-center rounded bg-transparent"
+            styles={selectStyles}
           />
         </div>
       </div>
       <button
         type="submit"
-        className="bg-amber-400 p-2 pr-4 rounded shadow-md hover:bg-[#d4ab28]"
+        className="bg-amber-400 p-2 pr-4 rounded shadow-md hover:bg-[#d4ab28] "
       >
         ثبت
       </button>

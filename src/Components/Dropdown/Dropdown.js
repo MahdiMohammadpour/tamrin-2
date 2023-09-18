@@ -40,7 +40,7 @@ const Dropdown = ({ title, options , lastChild }) => {
                   <Menu.Item className={styles.menuItem}>
                     {({ active }) => (
                       <a
-                        href="#"
+                        href="/"
                         className={classNames(
                           active
                             ? "bg-slate-50 text-gray-900 "

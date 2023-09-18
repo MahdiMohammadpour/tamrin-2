@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useId, useReducer } from "react";
 
 import { TasksData } from "../../db/Tasks";
 
@@ -7,7 +7,8 @@ const TasksContextDispatcher = React.createContext();
 
 const reducer = (state, action) => {
   if (action.type === "add") {
-    const updatedTasks = [...state, action.task];
+    const newTask = {...action.task, id: Math.floor(Math.random() * 1000) + Date.now()}
+    const updatedTasks = [...state, newTask];
     return updatedTasks;
   }
 };

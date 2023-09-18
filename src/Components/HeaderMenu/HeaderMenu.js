@@ -26,11 +26,11 @@ const HeaderMenu = ({ styles }) => {
       {menuList.map((m, index) => {
         if (index === menuList.length - 1) {
           return (
-            <Dropdown title={m.title} options={m.options} lastChild={true} />
+            <Dropdown title={m.title} options={m.options} lastChild={true} key={index}/>
           );
         }
         return (
-          <Dropdown title={m.title} options={m.options} lastChild={false} />
+          <Dropdown title={m.title} options={m.options} lastChild={false} key={index}/>
         );
       })}
     </div>

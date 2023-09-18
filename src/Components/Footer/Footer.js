@@ -29,16 +29,19 @@ const Footer = () => {
           title="رتبه یک سفر"
           text="معتبرترین عرضه‌کننده محصولات گردشگری در ایران"
           image={ticket}
+          key={1}
         />
         <Acheivment
           title="همسفر هر سفر"
           text="ارائه تمامی خدمات سفر (پرواز، قطار، اتوبوس، هتل و تور)"
           image={device}
+          key={2}
         />
         <Acheivment
           title="همسفر همه لحظات سفر"
           text="پشتیبانی و همراهی ۲۴ ساعته در تمامی مراحل سفر"
           image={chat}
+          key = {3}
         />
       </div>
       <div className="flex  w-[70%] h-60 border-b mt-[2rem]">
@@ -54,6 +57,7 @@ const Footer = () => {
                 "بیمه مسافرتی",
                 "مجله علی بابا",
               ]}
+              key={1}
             />
             <FooterNav
               title="خدمات مشتریان"
@@ -64,6 +68,7 @@ const Footer = () => {
                 "قوانین و مقررات",
                 "پرسش و پاسخ",
               ]}
+              key={2}
             />
             <FooterNav
               title="اطلاعات تکمیلی"
@@ -73,6 +78,7 @@ const Footer = () => {
                 "همکاری با آژانس ها",
                 "فرصت های شعلی",
               ]}
+              key={3}
             />
           </div>
         </div>
@@ -90,26 +96,32 @@ const Footer = () => {
           <div className="flex mt-[2rem]">
             <img
               src={footer1}
+              alt="virtual-jobs-organiztion"
               className="w-[4rem] border rounded-md cursor-pointer"
             />
             <img
               src={footer2}
+              alt="samandehi"
               className="w-[4rem] border rounded-md cursor-pointer mr-2 "
             />
             <img
               src={footer3}
+              alt="e-namad"
               className="w-[4rem] border rounded-md cursor-pointer mr-2"
             />
             <img
               src={footer4}
+              alt="coa.ir"
               className="w-[4rem] border rounded-md cursor-pointer mr-2"
             />
             <img
               src={footer5}
+              alt="aira.ir"
               className="w-[4rem] border rounded-md cursor-pointer mr-2"
             />
             <img
               src={footer6}
+              alt="air-organization"
               className="w-[4rem] border rounded-md cursor-pointer mr-2"
             />
           </div>
