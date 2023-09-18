@@ -1,4 +1,4 @@
-import { useTasks } from "../Providers/TasksProvider";
+import { useTasks } from "../../Providers/TasksProvider";
 import Task from "../Task/Task";
 
 const statusList = ["انجام شده", "انجام نشده", "در حال انجام", "چالشی"];

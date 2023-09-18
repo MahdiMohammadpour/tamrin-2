@@ -1,6 +1,6 @@
 import { BiUserCircle, BiSolidPlane } from "react-icons/bi";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import logo from "../../Resources/images/logo.gif";
+import logo from "../../../Resources/images/logo.gif";
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 const Header = () => {

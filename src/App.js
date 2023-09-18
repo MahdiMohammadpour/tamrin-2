@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import Body from "./Components/Body/Body";
+import Header from "./Components/UI/Header/Header";
+import Footer from "./Components/UI/Footer/Footer";
+import Body from "./Components/UI/Body/Body";
 import TasksProvider from "./Components/Providers/TasksProvider";
 
 const App = () => {

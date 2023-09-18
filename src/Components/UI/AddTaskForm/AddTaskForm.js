@@ -1,6 +1,6 @@
 import Select from "react-select";
 import { useState } from "react";
-import { useTasksActions } from "../Providers/TasksProvider";
+import { useTasksActions } from "../../Providers/TasksProvider";
 
 const statusOptions = [
   { value: "done", label: "انجام شده" },

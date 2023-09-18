@@ -10,16 +10,16 @@ import {
   SiTelegram,
 } from "react-icons/si";
 
-import ticket from "../../Resources/images/ticket.webp";
-import device from "../../Resources/images/device.webp";
-import chat from "../../Resources/images/chat.webp";
-import logo from "../../Resources/images/logo.gif";
-import footer1 from "../../Resources/images/footer1.png";
-import footer2 from "../../Resources/images/footer2.png";
-import footer3 from "../../Resources/images/footer3.png";
-import footer4 from "../../Resources/images/footer4.svg";
-import footer5 from "../../Resources/images/footer5.png";
-import footer6 from "../../Resources/images/footer6.svg";
+import ticket from "../../../Resources/images/ticket.webp";
+import device from "../../../Resources/images/device.webp";
+import chat from "../../../Resources/images/chat.webp";
+import logo from "../../../Resources/images/logo.gif";
+import footer1 from "../../../Resources/images/footer1.png";
+import footer2 from "../../../Resources/images/footer2.png";
+import footer3 from "../../../Resources/images/footer3.png";
+import footer4 from "../../../Resources/images/footer4.svg";
+import footer5 from "../../../Resources/images/footer5.png";
+import footer6 from "../../../Resources/images/footer6.svg";
 
 const Footer = () => {
   return (
