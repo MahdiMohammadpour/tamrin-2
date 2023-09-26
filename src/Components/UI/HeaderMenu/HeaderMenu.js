@@ -19,6 +19,10 @@ const HeaderMenu = ({ styles }) => {
       title: "بیشتر",
       options: ["علی باباپلاس", "مجله علی بابا", "بیمه مسافرتی"],
     },
+    {
+      title: "بیشتر",
+      options: ["علی باباپلاس", "مجله علی بابا", "بیمه مسافرتی"],
+    },
   ]);
 
   return (
@@ -26,11 +30,11 @@ const HeaderMenu = ({ styles }) => {
       {menuList.map((m, index) => {
         if (index === menuList.length - 1) {
           return (
-            <Dropdown title={m.title} options={m.options} lastChild={true} key={index}/>
+            <Dropdown title={m.title} options={m.options} seprator={true} key={index}/>
           );
         }
         return (
-          <Dropdown title={m.title} options={m.options} lastChild={false} key={index}/>
+          <Dropdown title={m.title} options={m.options} seprator={false} key={index}/>
         );
       })}
     </div>

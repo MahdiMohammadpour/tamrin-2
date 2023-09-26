@@ -15,6 +15,9 @@ const reducer = (state, action) => {
     const updatedTasks = [...state, newTask];
     return updatedTasks;
   }
+  else if (action.type === "remove") {
+    return state.filter((task) => task.id !== action.id);
+  }
 };
 
 const TasksProvider = ({ children }) => {

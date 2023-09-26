@@ -7,11 +7,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Dropdown = ({ title, options , lastChild }) => {
+const Dropdown = ({ title, options , seprator }) => {
   return (
     <Menu
       as="div"
-      className={`relative inline-block text-left px-3 text-red-200 ${!lastChild && "border-l border-slate-200"}`}
+      className={`relative inline-block text-left px-3 text-red-200 ${!seprator && "border-l border-slate-200"}`}
     >
       <Menu.Button className="inline-flex w-full justify-center gap-x-1 px-3 py-2 text-sm font-semibold text-gray-500 hover:bg-gray-50 rounded-md">
         {title}

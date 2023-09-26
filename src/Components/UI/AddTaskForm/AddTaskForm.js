@@ -14,7 +14,13 @@ const AddTaskForm = () => {
   const dispatch = useTasksActions();
 
   const selectStyles = {
-    control: (styles,{isFocused}) => ({ ...styles, backgroundColor: "white",border : isFocused && "none"}),
+    control: (styles, { isFocused, isSelected }) => ({
+      ...styles,
+      backgroundColor: "white",
+      borderRadius: "0.35rem",
+      border: "none",
+      cursor: "pointer",
+    }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
@@ -25,9 +31,9 @@ const AddTaskForm = () => {
           : "transparent",
         cursor: isFocused && "pointer",
         color: "black",
-        width : "96%",
-        margin : "2%",
-        borderRadius : "3px"
+        width: "96%",
+        margin: "2%",
+        borderRadius: "3px",
       };
     },
   };
@@ -58,7 +64,7 @@ const AddTaskForm = () => {
             onChange={changeHandler}
             name="name"
             value={task.name}
-            className="shadow-md w-[65%] p-1 text-center rounded"
+            className="shadow-md w-[65%] p-1 text-center rounded  focus:outline-none"
           />
         </div>
         <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md mt-4">
@@ -68,7 +74,7 @@ const AddTaskForm = () => {
             onChange={changeHandler}
             name="expert"
             value={task.expert}
-            className="shadow-md w-[65%] p-1 text-center rounded"
+            className="shadow-md w-[65%] p-1 text-center rounded focus:outline-none"
           />
         </div>
         <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md mt-4">
@@ -78,7 +84,7 @@ const AddTaskForm = () => {
             value={task.status}
             options={statusOptions}
             onChange={changeStatus}
-            className="flex flex-col justify-center shadow-md w-[65%]  text-center rounded bg-transparent"
+            className="flex flex-col justify-center shadow-md w-[65%]  text-center  bg-transparent "
             styles={selectStyles}
           />
         </div>
