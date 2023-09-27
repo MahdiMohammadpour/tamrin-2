@@ -7,7 +7,7 @@ import TasksProvider from "./Components/Providers/TasksProvider";
 
 const App = () => {
   return (
-    <div className="flex flex-col justify-center min-h-screen">
+    <div className="flex flex-col justify-center ">
       <Header />
       <TasksProvider>
         <Body />

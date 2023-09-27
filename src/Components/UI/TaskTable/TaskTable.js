@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from "react";
 import { useTasks } from "../../Providers/TasksProvider";
 import Task from "../Task/Task";
 import { useTasksActions } from "../../Providers/TasksProvider";
@@ -9,12 +9,15 @@ const TaskTable = () => {
   const tasks = useTasks();
   const dispatch = useTasksActions();
 
-  console.log(tasks)
+  console.log(tasks);
   return (
-    <div className="flex w-[70%] h-[400px] mr-5">
+    <div className="relative flex justify-between w-full h-full mt-3 ">
       {statusList.map((status, index) => {
         return (
-          <div className="flex flex-col w-[25%] h-[400px] mr-2" key={index}>
+          <div
+            className={`flex flex-col w-full h-full ${index && "mr-3"}`}
+            key={index}
+          >
             <div className="flex items-center justify-center bg-amber-400 rounded shadow h-[50px] ">
               {status}
             </div>
@@ -26,7 +29,13 @@ const TaskTable = () => {
                       task={task}
                       key={task.id}
                       onRemove={() => dispatch({ type: "remove", id: task.id })}
-                      editComplete={(editedTask) => dispatch({ type: "edit", id: task.id ,editedTask:editedTask })}
+                      editComplete={(editedTask) =>
+                        dispatch({
+                          type: "edit",
+                          id: task.id,
+                          editedTask: editedTask,
+                        })
+                      }
                     />
                   )
                 );

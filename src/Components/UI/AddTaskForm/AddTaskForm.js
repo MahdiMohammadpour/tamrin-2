@@ -48,10 +48,9 @@ const AddTaskForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(!task.name || !task.expert || !task.status.value)
-    {
-      alert("لطفا همه فیلد ها را پر کنید")
-      return
+    if (!task.name || !task.expert || !task.status.value) {
+      alert("لطفا همه فیلد ها را پر کنید");
+      return;
     }
     dispatch({ type: "add", task: task });
     setTask({ name: "", expert: "", status: "" });
@@ -60,44 +59,42 @@ const AddTaskForm = () => {
   return (
     <form
       onSubmit={submitHandler}
-      className="flex flex-col justify-between bg-gray-50 w-[25%] h-[400px] p-4 rounded shadow-md"
+      className="flex  justify-between items-center bg-gray-50 w-full p-2 rounded shadow-md"
     >
-      <div>
-        <div className="flex justify-between items-center bg-amber-400 p-2 pr-4  rounded shadow-md">
-          <label>نام تسک</label>
-          <input
-            type="text"
-            onChange={changeHandler}
-            name="name"
-            value={task.name}
-            className="shadow-md w-[65%] p-1 text-center rounded  focus:outline-none"
-          />
-        </div>
-        <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md mt-4">
-          <label>نام کارشناس</label>
-          <input
-            type="text"
-            onChange={changeHandler}
-            name="expert"
-            value={task.expert}
-            className="shadow-md w-[65%] p-1 text-center rounded focus:outline-none"
-          />
-        </div>
-        <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md mt-4">
-          <label>وضعیت</label>
-          <Select
-            title="سلام"
-            value={task.status}
-            options={statusOptions}
-            onChange={changeStatus}
-            className="flex flex-col justify-center shadow-md w-[65%]  text-center  bg-transparent "
-            styles={selectStyles}
-          />
-        </div>
+      <div className="flex justify-between items-center bg-amber-400 p-2 pr-4  rounded shadow-md w-[25%] h-[48px]">
+        <label>نام تسک</label>
+        <input
+          type="text"
+          onChange={changeHandler}
+          name="name"
+          value={task.name}
+          className="shadow-md w-[65%] p-1 text-center rounded  focus:outline-none"
+        />
+      </div>
+      <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md w-[25%] h-[48px]">
+        <label>نام کارشناس</label>
+        <input
+          type="text"
+          onChange={changeHandler}
+          name="expert"
+          value={task.expert}
+          className="shadow-md w-[65%] p-1 text-center rounded focus:outline-none"
+        />
+      </div>
+      <div className="flex justify-between items-center bg-amber-400 p-2 pr-4 rounded shadow-md w-[25%] h-[48px]">
+        <label>وضعیت</label>
+        <Select
+          title="سلام"
+          value={task.status}
+          options={statusOptions}
+          onChange={changeStatus}
+          className="flex flex-col justify-center shadow-md w-[65%] text-center  bg-transparent "
+          styles={selectStyles}
+        />
       </div>
       <button
         type="submit"
-        className="bg-amber-400 p-2 pr-4 rounded shadow-md hover:bg-[#d4ab28] "
+        className="bg-amber-400 w-20 p-2 pr-4 rounded  shadow-md hover:bg-[#d4ab28] "
       >
         ثبت
       </button>
