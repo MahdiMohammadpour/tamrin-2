@@ -9,34 +9,34 @@ const statusOptions = [
   { value: "challenge", label: "چالشی" },
 ];
 
+const selectStyles = {
+  control: (styles, { isFocused, isSelected }) => ({
+    ...styles,
+    backgroundColor: "white",
+    borderRadius: "0.35rem",
+    border: "none",
+    cursor: "pointer",
+  }),
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...styles,
+      backgroundColor: isSelected
+        ? "#fcd34d"
+        : isFocused
+        ? "#fde68a"
+        : "transparent",
+      cursor: isFocused && "pointer",
+      color: "black",
+      width: "96%",
+      margin: "2%",
+      borderRadius: "3px",
+    };
+  },
+};
+
 const AddTaskForm = () => {
   const [task, setTask] = useState({ name: "", expert: "", status: "" });
   const dispatch = useTasksActions();
-
-  const selectStyles = {
-    control: (styles, { isFocused, isSelected }) => ({
-      ...styles,
-      backgroundColor: "white",
-      borderRadius: "0.35rem",
-      border: "none",
-      cursor: "pointer",
-    }),
-    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-      return {
-        ...styles,
-        backgroundColor: isSelected
-          ? "#fcd34d"
-          : isFocused
-          ? "#fde68a"
-          : "transparent",
-        cursor: isFocused && "pointer",
-        color: "black",
-        width: "96%",
-        margin: "2%",
-        borderRadius: "3px",
-      };
-    },
-  };
 
   const changeHandler = (e) => {
     setTask({ ...task, [e.target.name]: e.target.value });
@@ -48,7 +48,13 @@ const AddTaskForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if(!task.name || !task.expert || !task.status.value)
+    {
+      alert("لطفا همه فیلد ها را پر کنید")
+      return
+    }
     dispatch({ type: "add", task: task });
+    setTask({ name: "", expert: "", status: "" });
   };
 
   return (

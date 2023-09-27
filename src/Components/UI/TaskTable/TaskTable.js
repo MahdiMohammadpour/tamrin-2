@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { useTasks } from "../../Providers/TasksProvider";
 import Task from "../Task/Task";
 import { useTasksActions } from "../../Providers/TasksProvider";
@@ -8,6 +9,7 @@ const TaskTable = () => {
   const tasks = useTasks();
   const dispatch = useTasksActions();
 
+  console.log(tasks)
   return (
     <div className="flex w-[70%] h-[400px] mr-5">
       {statusList.map((status, index) => {
@@ -23,7 +25,8 @@ const TaskTable = () => {
                     <Task
                       task={task}
                       key={task.id}
-                      removeHandler={() =>dispatch({ type: "remove", id: task.id })}
+                      onRemove={() => dispatch({ type: "remove", id: task.id })}
+                      editComplete={(editedTask) => dispatch({ type: "edit", id: task.id ,editedTask:editedTask })}
                     />
                   )
                 );

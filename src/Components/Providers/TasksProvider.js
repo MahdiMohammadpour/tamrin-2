@@ -6,17 +6,29 @@ const TasksContext = React.createContext();
 const TasksContextDispatcher = React.createContext();
 
 const reducer = (state, action) => {
+  // add a task
   if (action.type === "add") {
     const newTask = {
       ...action.task,
       id:
-        action.task.status.value + "-" + Math.floor(Math.random() * 1000) + Date.now(),
+        action.task.status.value +
+        "-" +
+        Math.floor(Math.random() * 1000) +
+        Date.now(),
     };
     const updatedTasks = [...state, newTask];
     return updatedTasks;
   }
+  // deltet a task
   else if (action.type === "remove") {
     return state.filter((task) => task.id !== action.id);
+  }
+  // edit a task
+  else if (action.type === "edit") {
+    const index = state.findIndex((task) => task.id === action.id);
+    const tempTasks = [...state];
+    tempTasks[index] = action.editedTask;
+    return tempTasks;
   }
 };
 
