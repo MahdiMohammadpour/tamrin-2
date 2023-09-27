@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CgTrash, CgPen, CgCheck, CgKey, CgClose } from "react-icons/cg";
+import { CgTrash, CgPen, CgCheck, CgKey } from "react-icons/cg";
 import { IoIosClose } from "react-icons/io";
 
 const Task = ({ task, onRemove, editComplete }) => {
@@ -9,6 +9,10 @@ const Task = ({ task, onRemove, editComplete }) => {
 
   const checkHandler = () => {
     setIsEdit(false);
+    if (!tempTask.name || !tempTask.expert) {
+      setTempTask(task);
+      return;
+    }
     editComplete(tempTask);
   };
 
@@ -51,18 +55,18 @@ const Task = ({ task, onRemove, editComplete }) => {
             {tempTask.name}
           </p>
           <div className="flex items-center justify-between w-full pr-1">
-            <p className="flex items-center justify-center mt-2 mr-2">
+            <p className="flex items-center justify-center mr-2">
               {tempTask.expert}
             </p>
-            <div>
+            <div className="flex">
               <button onClick={showIdHandler}>
-                <CgKey className="mt-2 ml-1 text-gray-500 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-gray-400 hover:text-white " />
+                <CgKey className=" ml-1 text-gray-500 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-gray-400 hover:text-white " />
               </button>
               <button onClick={editHandler}>
-                <CgPen className="mt-2 ml-1 text-blue-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-blue-400 hover:text-white " />
+                <CgPen className="ml-1 text-blue-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-blue-400 hover:text-white " />
               </button>
               <button onClick={onRemove}>
-                <CgTrash className="mt-2 text-red-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-red-400 hover:text-white " />
+                <CgTrash className=" text-red-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-red-400 hover:text-white " />
               </button>
             </div>
           </div>
@@ -78,32 +82,24 @@ const Task = ({ task, onRemove, editComplete }) => {
     return (
       <div className="flex flex-col justify-between justify-center items-center px-16 text-center mt-3 px-2 py-2 overflow-hidden bg-gray-100 rounded shadow w-full min-h-[80px] h-[80px]">
         <input
-          className={`flex justify-center items-center w-full h-[50%] px-2 py-4  rounded ${
-            tempTask.status.value === "done"
-              ? "bg-lime-400"
-              : tempTask.status.value === "notdone"
-              ? "bg-red-500"
-              : tempTask.status.value === "doing"
-              ? "bg-indigo-500"
-              : "bg-purple-500"
-          }`}
+          className="flex justify-center items-center w-full h-[50%] px-2 py-4  rounded"
           onChange={changeInputHandler}
           value={tempTask.name}
           name="name"
         />
         <div className="flex items-center justify-between w-full pr-1">
           <input
-            className="flex items-center justify-center rounded mt-2 mr-2 px-1 "
+            className="flex items-center justify-center rounded px-1 w-[60%] "
             onChange={changeInputHandler}
             value={tempTask.expert}
             name="expert"
           />
-          <div>
+          <div className="flex">
             <button onClick={checkHandler}>
-              <CgCheck className="mt-2 ml-1 text-green-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-green-400 hover:text-white " />
+              <CgCheck className="ml-1 text-green-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-green-400 hover:text-white " />
             </button>
             <button onClick={closeHandler}>
-              <IoIosClose className="mt-2 ml-1 text-red-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-red-400 hover:text-white " />
+              <IoIosClose className="ml-1 text-red-400 bg-transparent p-[0.2rem] text-[23px] rounded-[50%] shadow-md hover:bg-red-400 hover:text-white " />
             </button>
           </div>
         </div>
